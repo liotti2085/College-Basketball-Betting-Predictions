@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>College Basketball Predictions</title>
+		<h1 style='text-align:center; font-size:300%;'>College Basketball Predictions</h1>
+		<link rel="stylesheet" href= "{{ url_for('static', filename='styles/webapp.css') }}">
+	</head>
+
+	<div class='container'>
+		<div class='awaylogo'><img src='{{away_logo}}'></div>
+		<div class='homelogo'><img src='{{home_logo}}'></div>
+	</div>
+
+	<body>
+		<form name='form', method="POST", style="text-align: center;">
+			<br>
+
+			<select name='away' type='string' placeholder='Select Away Team'>
+				<option value="{{teams[0]}}">Away Team</option>
+				{% for team in teams %}
+					<option value="{{team}}">{{team}}</option>
+				{% endfor %}				
+		 	</select> &ensp; &ensp;
+
+
+ 			<select name='home' type='string' placeholder='Select Home Team'>
+				<option value="{{teams[0]}}">Home Team</option>
+				{% for team in teams %}
+					<option value="{{team}}">{{team}}</option>
+				{% endfor %}				
+		 	</select>
+
+  			<br><br>
+			<button value="Submit">Run</button>
+			
+		</form>
+		<br><br>
+
+
+		<p class='game' style='text-align:center';> {{away}} &ensp; &ensp; &ensp; at &ensp; &ensp; &ensp; {{home}}</p>
+
+		<div class='grid-container'>
+			<div class='grid-item'>{{away}} Win Prob: {{output_3}} &ensp; {{output_9}}</div>
+			<div class='grid-item'>{{home}} Win Prob: {{output_4}} &ensp; {{output_8}}</div>
+			<div class='grid-item'>{{away}} Score: {{output_5}}</div>
+			<div class='grid-item'>{{home}} Score: {{output_6}}</div>
+			<div class='grid-item'>Kenpom Spread: {{output_2}}</div>
+			<div class='grid-item'>Kenpom Total: {{output_7}}</div>
+			<div class='grid-item'>XGBoost Spread: {{output_1}}</div>
+			<div class='grid-item'>XGBoost Total: {{output_10}}</div>
+			
+	</body>
+</html>

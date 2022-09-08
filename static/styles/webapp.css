@@ -1,0 +1,30 @@
+.awaylogo{
+	float:left;
+}
+
+.homelogo{
+	float:right;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto;
+	background-color: #ff6e40; 
+	padding: 7px;
+}
+
+.grid-item {
+	background-color: #f5f0e1;
+	border: 3px solid rgba(0,0,0,.8);
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+}
+
+.game {
+	font-size:50px;
+}
+
+body {
+	background-color: #1e3d59;
+}
